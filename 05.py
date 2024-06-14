@@ -21,13 +21,65 @@
 
     # *** Ao inicar o programa o usuário deve escolher num menu a opção desejada e o sistema deve executar até que o usuário insira um comando de parada.
 
-alunos = set()
 notas = dict()
-def adicionar_aluno(aluno):
-    alunos.add(aluno)
-    port = float(input("Nota de Portugues: "))
-    mat = float(input("Nota de Matematica: "))
-    cienc = float(input("Nota de Ciencias: "))
-    geo = float(input("Nota de Geografia: "))
-    hist = float(input("Nota de Historia: "))
+def adicionarAluno(aluno):
+    if aluno not in notas:
+        port = float(input("Nota de Portugues: "))
+        mat = float(input("Nota de Matematica: "))
+        cienc = float(input("Nota de Ciencias: "))
+        geo = float(input("Nota de Geografia: "))
+        hist = float(input("Nota de Historia: "))
+        notas[aluno] = [port, mat, cienc, geo, hist]
+    else:
+        cond = input(f"Deseja reescrever as notas de {aluno}? (s/n)  ")
+        if cond == "s":
+            deletar(aluno)
+            adicionarAluno(aluno)
 
+def processamentoDados(aluno):
+    if aluno in notas:
+        somaNotas = 0
+        passou = False
+        for valor in notas.get(aluno, []):
+            somaNotas += valor
+        if somaNotas / 5 >= 7:
+            passou = True
+            print(f"{aluno} passou!")
+        else:
+            print(f"{aluno} nao passou")
+        print(f"Media de {aluno} é {somaNotas / 5}")
+    else:
+        print("Usuario nao encontrado")
+        return
+    return passou, somaNotas / 5
+
+def relatorio(aluno):
+    if aluno in notas:
+        passou, mediaFinal = processamentoDados(aluno)
+        print(f"Notas:\nPortugues: {notas.get(aluno, [])[0]}\nMatematica {notas.get(aluno, [])[1]}\nCiencias {notas.get(aluno, [])[2]}\n"
+              f"Geografia {notas.get(aluno, [])[3]}\nHistoria {notas.get(aluno, [])[4]}\n")
+    else:
+        print("aluno nao encontrado")
+
+def deletar(aluno):
+    if aluno in notas:
+        print(f"dados de {aluno} foram deletadas")
+        del notas[aluno]
+    else:
+        print("usuario nao encontrado")
+
+while True:
+    nome = input("Digite o nome do aluno: ")
+    processo = int(input("Escolha uma opção:\n1.Entrada de Dados\n2.Processamento de Dados\n3.Relatorio\n4.Deletar Aluno\n5.Sair\n"))
+    if processo == 1:
+        adicionarAluno(nome)
+    elif processo == 2:
+        processamentoDados(nome)
+    elif processo == 3:
+        relatorio(nome)
+    elif processo == 4:
+        deletar(nome)
+    elif processo == 5:
+        break
+    else:
+        print("Digite um processo valido! ")

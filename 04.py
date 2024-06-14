@@ -12,12 +12,12 @@ l2 = []
 
 while x != "FIM":
    x = input("digite valores da lista 1 ou FIM: ")
-   if x != "FIM": #evitando o erro da ultima rodagem do while n conseguir identificar o FIM como um int (ate pq ele n eh)
+   if x != "FIM":
        l1.append(int(x))
 
 while y != "FIM":
    y = input("digite valores da lista 2 ou FIM: ")
-   if y != "FIM": #evitando o erro da ultima rodagem do while n conseguir identificar o FIM como um int (ate pq ele n eh)
+   if y != "FIM":
        l2.append(int(y))
 
 #transformando as listas em sets e printando a intersecção

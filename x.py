@@ -1,3 +1,6 @@
-thisset = {"apple", "banana", "cherry", "apple"}
-thisset.add(1)
-print(thisset)
+def x(r):
+    return 3-1, 4 + 2
+
+x, y = x(2)
+print(x)
+print(y)

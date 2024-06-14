@@ -5,7 +5,6 @@
 # lista e ao digitar 'FIM' passe para a segunda lista
 # ao digitar 'FIM' novamente a função seja executada.
 
-interseccao = []
 l1 = []
 x = 0
 y = 0
@@ -21,10 +20,7 @@ while y != "FIM":
    if y != "FIM": #evitando o erro da ultima rodagem do while n conseguir identificar o FIM como um int (ate pq ele n eh)
        l2.append(int(y))
 
-
-for item1 in l1:
-   if item1 in l2 and item1 not in interseccao:
-       interseccao.append(item1)
+#transformando as listas em sets e printando a intersecção
+print(set(l1) & set(l2))
 
 
-print(f"\n\n{interseccao}")

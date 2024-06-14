@@ -22,5 +22,3 @@ while y != "FIM":
 
 #transformando as listas em sets e printando a intersecção
 print(set(l1) & set(l2))
-
-

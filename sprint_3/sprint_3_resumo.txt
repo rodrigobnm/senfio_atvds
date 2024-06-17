@@ -1,0 +1,72 @@
+#->> Sprint 03: 
+    ## - Assuntos - 
+        ### Tratamento de erros  v
+        ### Manipulação de arquivos  v
+        ### Módulos e PIP 
+        ### Ambientes virtuais
+        
+    
+    ### Manipulação de arquivos
+        $ Tipo de arquivos 
+            $ Texto Simples
+                - Alfanumericos
+                - Formatado em Linhas
+                - Linhas Terminadas com EOL("\n")
+
+                $ Exemplo desses Arquivos:
+                    - .txt .csv .xml
+            $ Binarios 
+                - Não são texto plano 
+                - Apenas programas que sabem sua estrutura conseguem processa-los.
+
+                $ Exemplo desses Arquivos:
+                    - .xlsx .pdf .jpg .png
+            
+        $ Processamento de Arquivos
+            $ Abrir
+                - Usando o comando open() -> file = open("exemplo.txt", "a") #(caminho_p_arq, tipo_de_abertura)
+
+            $ Tipos de abertura
+                - "r" -> para ler
+                - "r+" -> ler e escrever
+                - "w" -> para escrever
+                - "w+" -> para escrever (apaga se o arquivo ja existir)
+                - "x" -> abre para criação exclusiva
+                - "b" -> modo binario
+                - "t" -> modo texto
+                - "+" -> abrir para atualizar (escrever e ler)
+
+        $ Abrindo arquivos        
+            file = open("nome.txt, "a")
+            print(file)
+
+        $ Funções para operar em "file"
+            - read() - lê todo o arquivo
+            - close() - fecha arquivo 
+            - write(<string>) - escreve a string no arquivo
+        
+            $ Exemplo
+                file = open("exemplo.txt, "a")
+                file.write("escrevendo isso")
+                file.close()
+
+        $ Leitura de Arquivos
+            $ read([N]) - retorna o conteudo do arquivo como uma unica string, N é um valor opcional, se erro: reton=ra erro
+            $ readline([N]) - retorna uma  linha do texto a cada chamada, iniciando na linha atual ate encontrar uma EOF
+            $ readlines() - retorna uma lista, cada elemento eh uma linha.
+
+        $ Usando Laço For
+            $ Exemplo:
+                x = open("nome_arq.txt", "r", encoding="utf8")
+                for linha in x:
+                    print(linha)
+            # ira printar linha por linha a cada loop (com um \n entre elas, usando .strip() pode-se tirar esse \n)
+        $ Obs: Somente quando o arquivo é fechado que os dados são efetivamente salvos no arquivo
+
+        $ Escrita de Arquivos
+            - Abrindo: x = open("arquivo.txt", "w") # se n tiver esse arq criado, ela ira criar
+            - se ja existir o seu conteudo sera apagado
+            # para acrescentar sem apagar usaria-se "a"
+        $ write(): grava uma string no arquivo por vez.
+
+        $ writelines(): recebe um objeto iterável (seja uma lista, uma tupla, um dicionário, etc). Com este método, várias linhas poderão ser inseridas no arquivo de uma vez.

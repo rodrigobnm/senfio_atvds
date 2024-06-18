@@ -70,3 +70,17 @@
         $ write(): grava uma string no arquivo por vez.
 
         $ writelines(): recebe um objeto iterável (seja uma lista, uma tupla, um dicionário, etc). Com este método, várias linhas poderão ser inseridas no arquivo de uma vez.
+
+    ### Tratamento de erros    
+        @ Tratamento de Exceções - Erros Lógicos
+            - tratar com ifs erros que podem ocorrer se os dados inseridos não estiverem sendo esperados.
+        @ Tratar - ERRO: No such file or directory: usando o path.exists(file_name.txt): file = open(file_name.txt) - ou usando o FileNotFoundError (será visto posteriormente)
+        @ Outros Erros: Usando: try:...except:(sera executado se ocorrer algum erro no try)
+        @ Obs: O except pode ser usado para exeções de tipos distintos: ex: except ValueError: 
+        @ Alguns erros:
+            - NameError: não conseguiu encontrar um nome local ou global.
+            - TypeError: Passado um ibjeto de um tipo diferente do tipo que a função espera.
+            - ValueError: Valor de um argumento de uma função com um valor inadequado. 
+            - ZeroDivisionError: gerado quando 0 é segundo argumento de divisão.
+            - FileNotFoundError: arquivo o diretório não existe. (pode ser usado no caso tratado no inicio, por exemplo)
+        @ try...except...else(o else sera executado se nenhum erro for encontrado)

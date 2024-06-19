@@ -2,7 +2,7 @@
     ## - Assuntos - 
         ### Tratamento de erros  v
         ### Manipulação de arquivos  v
-        ### Módulos e PIP 
+        ### Módulos e PIP v
         ### Ambientes virtuais
         
     
@@ -71,7 +71,7 @@
 
         $ writelines(): recebe um objeto iterável (seja uma lista, uma tupla, um dicionário, etc). Com este método, várias linhas poderão ser inseridas no arquivo de uma vez.
 
-    ### Tratamento de erros    
+    ### Tratamento de erros (Try ... Except)
         @ Tratamento de Exceções - Erros Lógicos
             - tratar com ifs erros que podem ocorrer se os dados inseridos não estiverem sendo esperados.
         @ Tratar - ERRO: No such file or directory: usando o path.exists(file_name.txt): file = open(file_name.txt) - ou usando o FileNotFoundError (será visto posteriormente)
@@ -84,3 +84,21 @@
             - ZeroDivisionError: gerado quando 0 é segundo argumento de divisão.
             - FileNotFoundError: arquivo o diretório não existe. (pode ser usado no caso tratado no inicio, por exemplo)
         @ try...except...else(o else sera executado se nenhum erro for encontrado)
+    
+    
+    ### Módulos e PIP 
+        % Modulos ->  Pacote de funções e variáveis que o dev pode usar e reutilizar dentro de seu sistema. 
+            Podem ser autorais (feitos pelo proprio dev), direto da biblioteca de modulos do python ou de terceiros.
+        % Como usar
+            Importando-as: "import tools", por exemplo, esse trecho importa um modulo tools, que pode ser autoral (contando que tenha uma tools.py na grade de arquivos).
+
+        % PIP - Gerenciador de pacotes do Python, para instalar, desinstalar ou alterar bibliotecas de terceiros.
+            (geralmente vem instalado com python) 
+            - Para ver versões: pip --version
+        % Como usar: Exemplo para o Beautiful Soup -> pip install beautifulsoup4
+            Para instalar dentro de página especifica (ideal que instale dentro de pasta) - pip install beautifulsoup4 -t ./libs
+            Para desinstalar: pip uninstall beautifulsoup4
+        % Para instalar várias de uma vez (ocorre em projetos)
+            - Cria-se um requirements.txt e dentro dele se define bibliotecas que se quer instalar
+            - Ex: (beautifulsoup4 == 4.9.3)
+            - Depois rodar: pip install -r ./requirements.txt ou pip install -r ./requirements.txt -t ./libs

@@ -3,7 +3,7 @@
         ### Tratamento de erros  v
         ### Manipulação de arquivos  v
         ### Módulos e PIP v
-        ### Ambientes virtuais
+        ### Ambientes virtuais v
         
     
     ### Manipulação de arquivos
@@ -102,3 +102,15 @@
             - Cria-se um requirements.txt e dentro dele se define bibliotecas que se quer instalar
             - Ex: (beautifulsoup4 == 4.9.3)
             - Depois rodar: pip install -r ./requirements.txt ou pip install -r ./requirements.txt -t ./libs
+
+    ### Ambientes virtuais
+        @ Configurando Ambiente Virtual:
+            - pip install virtualenv
+            - virtualenv nome_do_ambiente
+            - source nome_do_ambiente/bin/activate  # Linux/Mac
+            - nome_do_ambiente\Scripts\activate  # Windows
+
+            - Agora que o ambiente virtual está ativo, você pode instalar as bibliotecas necessárias usando pip.
+            - Mantenha um arquivo requirements.txt ou Pipfile atualizado com todas as dependências do projeto (Como visto anteriormente).
+
+    

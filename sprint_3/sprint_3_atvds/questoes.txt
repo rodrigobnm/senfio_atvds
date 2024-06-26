@@ -1,0 +1,28 @@
+########## Exercícios Sprint 03 - Senfio
+
+-> Assuntos: Tratamento de erros, Manipulação de arquivos, Módulos PIP e Ambientes Virtuais
+
+->> Ex 01) Escreva uma função que recebe 2 números, divide-os e retorne o resultado. Caso ocorra algum erro, explique o que aconteceu. 
+    ** Caso o resultado seja inteiro, apresente-o como tal, caso seja float, apresente-o com 2 casas decimais. **
+
+->> Ex 02) Crie um app de notas em terminal, nele você poderá criar uma nota, abrir uma nota, deletar uma nota e editar uma nota. 
+    * Cada nota é um arquivo txt
+    * Ao selecionar "Abrir nota" o usuário deve digitar o nome da nota e o programa deve ser 'case-insensitive'.
+    * Divida as opçẽs do menu em módulos diferentes.
+
+->> Ex 03) Crie um app que realize um request através da biblioteca 'requests' para o endereço 'http://api.github.com' e exiba o código de retorno.
+    * Utilize ambiente virtual
+    * Guarde os dados do ambiente virtual num arquivo 'requirements.txt'
+
+->> Ex 04) Crie um app que recebe um número inteiro e cria uma matriz, aleatória, através da lib 'numpy' e exiba o resultado.
+    * Utilize ambiente virtual
+    * Guarde os dados do ambiente virtual num arquivo 'requirements.txt'
+
+->> Ex 05) Crie um app de agenda telefônica, este deve usar a lib 'prettytable' para exibir os dados da agenda. 
+        O menu terá as opçẽs: Add, listar e buscar contato, além de uma opção de sair do sistema.
+        * Os contatos devem ser salvos num arquivo txt para manter a persistência do sistema.
+        * Crie o menu e as opções do menu em módulos diferentes. Cada ação em seu devido módulo. 
+        * Trate possíveis erros 
+        * Os contatos têm nome, número e email
+        * Utilize ambiente virtual
+        * Guarde os dados do ambiente virtual num arquivo 'requirements.txt'

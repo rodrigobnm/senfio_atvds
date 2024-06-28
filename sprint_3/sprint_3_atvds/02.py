@@ -8,7 +8,7 @@ import os
 def criarNota():
     nomeArquivo = input("digite o nome do arquivo: ")
     nomeArquivo = nomeArquivo.lower()
-    arq = open("sprint_3/sprint_3_atvds/notas_atvd_2/" + nomeArquivo + ".txt", "w")
+    arq = open(nomeArquivo + ".txt", "w")
     valorDaNota = input("Digite Nota: ")
     arq.write(valorDaNota)
     arq.close()
@@ -16,23 +16,35 @@ def criarNota():
 def abrirNota():
     nomeArquivo = input("digite o nome do arquivo: ")
     nomeArquivo = nomeArquivo.lower()
-    arq = open("sprint_3/sprint_3_atvds/notas_atvd_2/" + nomeArquivo + ".txt", "a")
-    return nomeArquivo + ".txt"
+    try:
+        arq = open(nomeArquivo + ".txt", "r")
+    except FileNotFoundError:
+        print("Arquivo Nao encontrado\nRedirecionando para criacao: ")
+    else:
+        print("Conteúdo atual da nota:\n")
+        print(arq.read())
 
 def deletarNota():
     nomeArquivo = input("digite o nome do arquivo: ")
     nomeArquivo = nomeArquivo.lower()
-    os.remove("sprint_3/sprint_3_atvds/notas_atvd_2/" + nomeArquivo + ".txt")
+    try:
+        os.remove(nomeArquivo + ".txt")
+    except FileNotFoundError:
+        print("Arquivo nao existe")
 
 def editarNota():
     nomeArquivo = input("digite o nome do arquivo: ")
     nomeArquivo = nomeArquivo.lower()
-    arq = open("sprint_3/sprint_3_atvds/notas_atvd_2/" + nomeArquivo + ".txt", "r+")
-    print(arq.read())
-    adicaoNota = input("Digite a adicao para sua nota: ")
-    adicaoNota = "\n" + adicaoNota
-    arq.write(adicaoNota)
-    arq.close()
+    try:
+        arq = open(nomeArquivo + ".txt", "r+")
+    except FileNotFoundError:
+        print("Arquivo nao existe")
+    else:
+        print("Conteúdo atual da nota:\n")
+        print(arq.read())
+        adicaoNota = input("\nDigite a adição para sua nota: ")
+        arq.write("\n" + adicaoNota)
+        print("Nota editada com sucesso.")
 
 
 while True:

@@ -3,14 +3,8 @@
 #    * Guarde os dados do ambiente virtual num arquivo 'requirements.txt'
 
 
-import numpy as np
+import numpy
 
-n = int(input("Tamanho da matriz: "))
-matrix = np.random.randint(0, 100, size=(n, n))
-print("Matriz aleatória:")
+tamanhoMatriz = int(input("Tamanho da matriz: "))
+matrix = numpy.random.randint(0, 100, size=(tamanhoMatriz, tamanhoMatriz))
 print(matrix)
-
-# 04\Scripts\activate
-# pip install numpy
-# pip freeze > requirements.txt
-# python 04.py

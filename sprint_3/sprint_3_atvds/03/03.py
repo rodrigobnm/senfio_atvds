@@ -5,10 +5,5 @@
 import requests
 
 response = requests.get('http://api.github.com')
-print(response.content)
+print(response)
 
-
-# venv\Scripts\activate
-# pip install requests
-# pip freeze > requirements.txt
-# python 03.py

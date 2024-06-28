@@ -1,11 +1,12 @@
+# ->> Ex 03) Crie um app que realize um request através da biblioteca 'requests' para o endereço 'http://api.github.com' e exiba o código de retorno.
+#    * Utilize ambiente virtual
+#    * Guarde os dados do ambiente virtual num arquivo 'requirements.txt'
+
 import requests
 
-def main():
-    response = requests.get('http://api.github.com')
-    print(f"Código de retorno: {response.status_code}")
+response = requests.get('http://api.github.com')
+print(response.content)
 
-if __name__ == "__main__":
-    main()
 
 # venv\Scripts\activate
 # pip install requests

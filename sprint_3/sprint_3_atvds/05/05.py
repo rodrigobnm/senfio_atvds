@@ -59,7 +59,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-# venv\Scripts\activate
+# 05\Scripts\activate
 # pip install prettytable
 # pip freeze > requirements.txt
 # python 05.py

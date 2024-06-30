@@ -16,33 +16,25 @@ def add_contato():
     numero = input("Digite o Numero: ")
     email = input("Digite o Email: ")
     tabela_contatos.add_row([contato, nome, numero, email])
-    arq.write(f"Contato: {contato}, Nome: {nome}, Numero: {numero}, Email: {email}\n")
+    arq.write(f"{contato}, Nome: {nome}, Numero: {numero}, Email: {email}\n")
 
 def listar_contato():
     print(tabela_contatos.get_string(fields=["Contatos"]))
 
 def buscar_contato():
-    nome_buscar = input("Digite Contato Para Buscar: ")
-    tabela_contatos_splitada = tabela_contatos.get_string().split(" ")
-    bool = 0
-    for i in tabela_contatos_splitada:
-        if i != " " and i != "|" and i != "\n":
-            if i == nome_buscar:
-                nome_buscar = False
-                bool = 1
-            if bool != 0:
-                bool += 1
-                if bool == 2:
-                    print(f"\nContato: {i}")
-                elif bool == 7:
-                    print(f"Nome: {i}")
-                elif bool == 11:
-                    print(f"Numero: {i}")
-                elif bool == 15:
-                    print(f"Email: {i}\n")
-                elif bool == 16:
-                    bool = 0
-
+    nome_buscado = input("Digite o Nome Buscado: ").lower()
+    encontrado = False
+    try:
+        with open("contatos.txt", 'r') as arquivo:
+            for linha in arquivo:
+                if nome_buscado.lower() in linha.lower():
+                    print("Contato: ", linha.strip())
+                    encontrado = True
+        if not encontrado:
+            print("Nome não encontrado.")
+    except FileNotFoundError:
+        print("Arquivo não encontrado.")
+    
 tabela_contatos = PrettyTable()
 tabela_contatos.field_names = ["Contatos", "Nomes", "Numeros", "Emails"]
 

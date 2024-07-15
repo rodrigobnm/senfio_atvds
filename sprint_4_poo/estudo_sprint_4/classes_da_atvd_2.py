@@ -5,7 +5,7 @@ class Livro():
         self.num_pgs = num_pgs
 
     def informacoes(self):
-        print(f"Titulo: {self.titulo}\nAutor: {self.autor}\nPaginas: {self.num_pgs}\n")
+        return f"Titulo: {self.titulo}\nAutor: {self.autor}\nPaginas: {self.num_pgs}\n"
         
     def leitura(self, pgs_para_ler):
         if pgs_para_ler > self.num_pgs:
@@ -19,7 +19,10 @@ class Livro():
             while pgs <= pgs_para_ler:
                 print(f"Pagina {pgs}: --conteudo--")
                 pgs += 1
+    def buscar_livros(self, titulo):
+           if self.titulo == titulo:
+               return True
     def listar_livros(self):
-            print(self.autor)
+        print(self.autor)
 
     

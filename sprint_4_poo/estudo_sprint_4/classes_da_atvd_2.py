@@ -25,4 +25,15 @@ class Livro():
     def listar_livros(self):
         print(self.autor)
 
-    
+class colecao_de_livros(Livro):
+    def __init__(self, titulo, autor, num_pgs, quantidade, versao):
+        super.__init__(titulo, autor, num_pgs)
+        self.quantidade = quantidade
+        self.versao = versao
+    def entrada_de_sub_nomes(self):
+        controle = 1
+        dicionario_dos_livros = dict()
+        while controle <= self.quantidade:
+            sub_nome = input(f"Digite o subnome do livro {self.titulo}: ")
+            dicionario_dos_livros.update({f'{self.titulo}: {sub_nome}': controle})
+            controle += 1

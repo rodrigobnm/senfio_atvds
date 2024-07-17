@@ -1,0 +1,40 @@
+1. Configuração Inicial do Git
+git config --global user.name "Seu Nome": Configura o nome do usuário para todos os repositórios no seu sistema.
+git config --global user.email "seu.email@example.com": Configura o email do usuário.
+2. Criação e Clonagem de Repositórios
+git init: Inicializa um novo repositório Git.
+git clone <URL do repositório>: Clona um repositório remoto para sua máquina local.
+3. Gerenciamento de Branches
+git branch: Lista todas as branches no repositório.
+git branch <nome-da-branch>: Cria uma nova branch.
+git checkout <nome-da-branch>: Troca para uma branch existente.
+git checkout -b <nome-da-branch>: Cria e troca para uma nova branch.
+4. Trabalhando com Alterações
+git status: Exibe o status das alterações no repositório.
+git add <arquivo>: Adiciona um arquivo específico para o próximo commit.
+git add .: Adiciona todas as alterações para o próximo commit.
+git commit -m "Mensagem do commit": Faz um commit das alterações adicionadas com uma mensagem descritiva.
+git commit -am "Mensagem do commit": Adiciona todas as alterações modificadas e faz um commit em uma única etapa.
+5. Sincronizando com o Repositório Remoto
+git push origin <nome-da-branch>: Envia suas alterações para a branch correspondente no repositório remoto.
+git pull origin <nome-da-branch>: Puxa as últimas alterações do repositório remoto e as mescla na branch atual.
+6. Mesclando Alterações
+git merge <nome-da-branch>: Mescla uma branch especificada na branch atual.
+git rebase <nome-da-branch>: Aplica commits de uma branch em outra, reescrevendo o histórico de commits.
+7. Resolvendo Conflitos
+Durante operações de merge ou rebase, pode haver conflitos que precisarão ser resolvidos manualmente.
+git mergetool: Abre uma ferramenta de merge para ajudar na resolução de conflitos.
+git diff: Mostra as diferenças entre commits, branches, arquivos, etc.
+8. Gerenciando Tags
+git tag <nome-da-tag>: Cria uma nova tag.
+git push origin <nome-da-tag>: Envia uma tag para o repositório remoto.
+9. Trabalhando com Submódulos
+git submodule add <URL do repositório>: Adiciona um repositório como submódulo.
+git submodule update --init --recursive: Atualiza e inicializa todos os submódulos.
+10. Revisando Histórico
+git log: Exibe o histórico de commits.
+git log --oneline: Exibe o histórico de commits em uma linha por commit.
+11. Utilizando Hooks
+Os hooks são scripts que Git executa antes ou depois de eventos como commits, merges, e recebimento de push.
+hooks: É importante saber que você pode automatizar tarefas usando hooks do Git.
+Esses são alguns dos principais comandos e conceitos que você precisa entender para trabalhar profissionalmente com o Bitbucket e Git. Conhecer bem essas operações garantirá que você possa gerenciar e colaborar efetivamente em projetos de software versionados com Git.

@@ -1,0 +1,63 @@
+Passo 1: Instalar o pytest
+Primeiro, você precisa instalar o pytest. Você pode fazer isso usando o pip:
+
+bash
+Copiar código
+pip install pytest
+Passo 2: Estrutura do Projeto
+Vamos supor que você tenha a seguinte estrutura de diretórios para seu projeto:
+
+markdown
+Copiar código
+my_project/
+│
+├── my_module.py
+└── tests/
+    └── test_my_module.py
+Passo 3: Escrever o Código a ser Testado
+Vamos criar um arquivo my_module.py com uma função simples para ser testada. Por exemplo:
+
+python
+Copiar código
+# my_module.py
+
+def soma(a, b):
+    return a + b
+Passo 4: Escrever Testes
+Agora, vamos criar um arquivo de testes chamado test_my_module.py dentro do diretório tests:
+
+python
+Copiar código
+# tests/test_my_module.py
+
+from my_module import soma
+
+def test_soma():
+    assert soma(1, 2) == 3
+    assert soma(-1, 1) == 0
+    assert soma(0, 0) == 0
+Neste arquivo, estamos importando a função soma do módulo my_module e escrevendo um teste simples que verifica se a função retorna os valores esperados.
+
+Passo 5: Executar os Testes
+Para executar os testes, você pode simplesmente navegar até o diretório raiz do seu projeto e rodar o comando pytest:
+
+bash
+Copiar código
+pytest
+Se tudo estiver configurado corretamente, você verá uma saída indicando que os testes foram executados com sucesso:
+
+bash
+Copiar código
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+collected 1 item
+
+tests/test_my_module.py .                                               [100%]
+
+============================== 1 passed in 0.03s ===============================
+Passo 6: Dicas e Truques
+Nomenclatura dos Arquivos de Teste: Certifique-se de que seus arquivos de teste e funções de teste comecem com test_ para que o pytest os reconheça automaticamente.
+Mensagens de Erro: Utilize a cláusula assert em seus testes. Se a asserção falhar, o pytest fornecerá uma mensagem de erro detalhada.
+Marcação de Testes: Você pode marcar testes com @pytest.mark para organizá-los e executá-los de forma seletiva.
+Recursos Adicionais
+Para aprender mais sobre pytest, você pode consultar a documentação oficial: 

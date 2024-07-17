@@ -1,0 +1,109 @@
+1. Pré-requisitos
+Antes de instalar o Pyenv, você precisa ter algumas dependências instaladas no seu sistema. Para sistemas baseados em Debian/Ubuntu, execute:
+
+bash
+Copiar código
+sudo apt update
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+Para sistemas baseados em Red Hat/CentOS:
+
+bash
+Copiar código
+sudo yum install -y gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel git
+Para macOS:
+
+bash
+Copiar código
+brew install openssl readline sqlite3 xz zlib
+2. Instalando o Pyenv
+Use o script de instalação automático do Pyenv:
+
+bash
+Copiar código
+curl https://pyenv.run | bash
+Isso instalará três componentes:
+
+pyenv: gerenciador de versões.
+pyenv-virtualenv: plugin para gerenciar ambientes virtuais.
+pyenv-update: plugin para atualizar o Pyenv.
+3. Configurando o Ambiente
+Adicione o Pyenv ao seu ~/.bashrc (ou ~/.zshrc se você estiver usando o Zsh):
+
+bash
+Copiar código
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+Depois, recarregue o arquivo de configuração:
+
+bash
+Copiar código
+source ~/.bashrc
+# ou
+source ~/.zshrc
+4. Instalando Versões do Python
+Verifique quais versões do Python estão disponíveis para instalação:
+
+bash
+Copiar código
+pyenv install --list
+Escolha a versão desejada e instale-a:
+
+bash
+Copiar código
+pyenv install 3.9.6
+Substitua 3.9.6 pela versão desejada.
+
+5. Definindo a Versão do Python
+Para definir uma versão global (padrão para todo o sistema):
+
+bash
+Copiar código
+pyenv global 3.9.6
+Para definir uma versão específica para um projeto:
+
+bash
+Copiar código
+cd /caminho/do/projeto
+pyenv local 3.9.6
+Para usar uma versão específica apenas na sessão atual do terminal:
+
+bash
+Copiar código
+pyenv shell 3.9.6
+6. Verificando a Versão Ativa
+Para verificar a versão do Python que está ativa no momento:
+
+bash
+Copiar código
+pyenv version
+7. Gerenciando Ambientes Virtuais
+Instale o plugin pyenv-virtualenv se ainda não o tiver feito:
+
+bash
+Copiar código
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+Crie um novo ambiente virtual:
+
+bash
+Copiar código
+pyenv virtualenv 3.9.6 meuambiente
+Ative o ambiente virtual:
+
+bash
+Copiar código
+pyenv activate meuambiente
+Desative o ambiente virtual:
+
+bash
+Copiar código
+pyenv deactivate
+8. Atualizando o Pyenv
+Para atualizar o Pyenv e seus plugins:
+
+bash
+Copiar código
+pyenv update
+Conclusão
+Agora você está pronto para gerenciar múltiplas versões do Python e ambientes virtuais usando o Pyenv! Se tiver dúvidas ou problemas, a documentação oficial do Pyenv é um excelente recurso.

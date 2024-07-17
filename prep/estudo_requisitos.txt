@@ -1,0 +1,6 @@
+- Git - BitBucket
+- Pytest
+- Docker + Docker-compose
+- Pyenv
+- Poetry
+- Django Rest Framework

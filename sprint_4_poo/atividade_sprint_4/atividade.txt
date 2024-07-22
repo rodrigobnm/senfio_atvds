@@ -42,7 +42,6 @@ Todo o desenvolvimento deverá ser feito dentro de um ambiente virtual.
         * return_book(self, book): permite ao cliente devolver um livro emprestado.
         * __str__(self): retorna uma string formatada com as informações do cliente e seus livros emprestados.
 
-
     {- Classe Library -}
     --Atributos:
         * __books: lista de todos os livros na biblioteca (lista de objetos Book).

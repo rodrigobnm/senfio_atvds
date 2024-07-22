@@ -1,3 +1,5 @@
+from tabulate import tabulate
+
 class Book():
     def __init__(self, title, author):
         self.__title = title
@@ -19,8 +21,3 @@ class Book():
             return False
     def __str__(self):
         print()
-class Client():
-    def __init__(self, name):
-        self.__name = name
-        self.__borrowed_bocks = __borrowed_bocks
-    def lend_book()

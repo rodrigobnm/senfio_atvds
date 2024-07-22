@@ -1,0 +1,68 @@
+########## Exercícios Sprint 04 - Senfio
+
+-> Assuntos: Programação Orientada a Objetos
+
+->> Ex 01) Desenvolver um sistema de gestão de biblioteca em Python
+ utilizando conceitos de Programação Orientada a Objetos (POO). 
+O sistema deverá permitir a adição de livros, empréstimo de livros
+ para clientes, e verificação da disponibilidade dos mesmos. 
+Adicionalmente, o exercício contará com a instalação e uso da
+ biblioteca 'tabulate' para exibir informações em formato de tabela. 
+Todo o desenvolvimento deverá ser feito dentro de um ambiente virtual.
+
+** Requisitos
+1. Ambiente Virtual e Instalação de Biblioteca Externa
+    --Crie e ative um ambiente virtual
+    --Instale a biblioteca 'tabulate' dentro deste ambiente.
+
+2. Classes e Métodos
+
+    --Crie três classes: Book, Client e Library.
+        
+    {- Classe Book -}
+    --Atributos:
+        * __title: título do livro (string).
+        * __author: autor do livro (string).
+        * __available: indicador de disponibilidade do livro (boolean).
+    --Métodos:
+        * __init__(self, title, author): inicializa os atributos do livro.
+        * loan(self): marca o livro como emprestado se estiver disponível.
+        * give_back(self): marca o livro como disponível.
+        * its_available(self): retorna a disponibilidade do livro.
+        * __str__(self): retorna uma string formatada com as informações do livro.
+
+
+    {- Classe Client -}
+    --Atributos:
+        * __name: nome do cliente (string).
+        * __borrowed_books: lista de livros emprestados pelo cliente (lista de objetos Book).
+    --Métodos:
+        * __init__(self, nome): inicializa os atributos do cliente.
+        * lend_book(self, book): permite ao cliente emprestar um livro disponível.
+        * return_book(self, book): permite ao cliente devolver um livro emprestado.
+        * __str__(self): retorna uma string formatada com as informações do cliente e seus livros emprestados.
+
+
+    {- Classe Library -}
+    --Atributos:
+        * __books: lista de todos os livros na biblioteca (lista de objetos Book).
+        * __clients: lista de clientes cadastrados (lista de objetos Client).
+    --Métodos:
+        * __init__(self): inicializa a lista de livros e clientes.
+        * add_book(self, book): adiciona um livro à lista de livros da biblioteca.
+        * add_client(self, client): adiciona um cliente à lista de clientes da biblioteca.
+        * list_books(self): retorna uma string formatada com as informações dos livros usando a biblioteca tabulate.
+        * __str__(self): retorna a lista de livros formatada como string.
+
+3. Interação com o Usuário
+
+O programa deverá interagir com o usuário para realizar as operações de:
+    * Listar livros disponíveis.
+    * Emprestar um livro especificado pelo nome.
+    * Devolver um livro especificado pelo nome.
+    * Sair do programa.
+
+4. Entrada e Processamento de Dados
+
+    * O sistema deve solicitar o nome do cliente ao iniciar.
+    * Deve ser implementado um loop para continuar a interação até o usuário escolher sair.

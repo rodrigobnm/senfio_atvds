@@ -1,5 +1,3 @@
-from tabulate import tabulate
-
 class Book():
     def __init__(self, title, author):
         self.__title = title
@@ -20,4 +18,4 @@ class Book():
         else:
             return False
     def __str__(self):
-        print()
+        return f"Titulo: {self.__title}\nAutor: {self.__author}\nDisponivel:{self.__available}\n"

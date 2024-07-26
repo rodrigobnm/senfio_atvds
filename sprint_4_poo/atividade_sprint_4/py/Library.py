@@ -3,13 +3,10 @@ from Client import Client
 
 from tabulate import tabulate
 
-class Library(Book, Client):
+class Library():
     def __init__(self):
-        super.__init__(self.__title, self.__name)
         self.__books = list()
-        self.__books.append(self.__title)
         self.__clients = list()
-        self.__clients.append(self.__name)
     def add_book(self, book):
         self.__books.append(book)
         return 
@@ -17,8 +14,7 @@ class Library(Book, Client):
         self.__clients.append(client)
         return
     def list_books(self):
-        ## tabulate 
-        return 
+        book_data = [[book._Book__title, book._Book__author, book._Book__available] for book in self.__books]
+        return tabulate(book_data, headers=['Título', 'Autor', 'Disponível']) 
     def __str__(self):
-        # retorna lista de livros formatada como uma string
-        return
+        return self.list_books()

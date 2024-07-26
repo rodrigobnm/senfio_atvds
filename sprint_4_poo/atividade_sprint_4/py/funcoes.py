@@ -1,18 +1,26 @@
-from Book import Book
 from Client import Client
 from Library import Library
 
-from tabulate import tabulate
-
 def list_book():
+    print(Library.list_books())
     return
 def lend_book(books_name):
-    author = input("Digite o Nome Do Autor: ")
-    lend_book = Book(books_name, author)
-    lend_book.loan()
+    for book in Library._Library__books:
+        if book._Book__title == books_name:
+            if Client.lend_book(book):
+                print("Livro Emprestado Com Sucesso!")
+            else:
+                print("Livro Nao Disponível!")
+            break
+    else:
+        print("Livro Nao Encontrado!")
     return 
 def return_book(books_name):
-    author = input("Digite o Nome Do Autor: ")
-    lend_book = Book(books_name, author)
-    lend_book.give_back()
+    for book in Client._Client__borrowed_books:
+        if book._Book__title == books_name:
+            if Client.return_book(book):
+                print("Livro devolvido com sucesso!")
+            break
+    else:
+        print("Você não emprestou este livro!")
     return

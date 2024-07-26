@@ -13,9 +13,6 @@ class Book():
         self.__available = True
         return print(f"{self.__title}, Marcado Como Disponivel! ")
     def its_available(self):
-        if self.__available is True:
-            return True
-        else:
-            return False
+        return self.__available
     def __str__(self):
         return f"Titulo: {self.__title}\nAutor: {self.__author}\nDisponivel:{self.__available}\n"

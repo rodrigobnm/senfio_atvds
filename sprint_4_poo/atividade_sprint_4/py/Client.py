@@ -1,22 +1,19 @@
-from Book import Book
-
-class Client(Book):
+class Client():
     def __init__(self, name):
-        super.__init__(self.__title, self.__author, self.__available)
         self.__name = name
-        self.__borrowed_books = [
-            Book(self.__title, self.__author, self.__available),
-        ]
+        self.__borrowed_books = []
     def lend_book(self, book):
-        for i in self.__title:
-            self.__available = False
-        return 
+        if book.loan():
+            self.__borrowed_books.append(book)
+            return True
+        return False
     def return_book(self, book):
-        for i in self.__title:
-            self.__available = True
-        return 
+        if book in self.__borrowed_books:
+            book.give_back()
+            self.__borrowed_books.remove(book)
+            return True
+        return False 
     def __str__(self):
-        print(f"Cliente: {self.__name}")
-        for i in self.__borrowed_books:
-            print(f"\n{i}\n")
-        return 
+        borrowed_books_str = ', '.join([str(book) for book in self.__borrowed_books])
+        return f'Cliente: {self.__name}, Livros Emprestados: [{borrowed_books_str}]'
+

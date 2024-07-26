@@ -2,8 +2,6 @@ from Client import Client
 
 from funcoes import list_book, lend_book, return_book
 
-from tabulate import tabulate
-
 clients = {}
 
 while True:
@@ -11,7 +9,6 @@ while True:
     if name not in clients:
         clients[name] = Client(name)
     client = clients[name]
-    username = input("Nome: ")
     menu_options = input("1. Listar Livros Disponiveis\n2. Emprestar Um Livro (Especificado Pelo Nome).\n3. Devolver Um Livro (Especificado Pelo Nome).\n4. Sair\n")
     if menu_options == "1":
         list_book()

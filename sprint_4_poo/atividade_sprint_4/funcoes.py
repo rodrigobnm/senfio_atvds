@@ -5,7 +5,7 @@ def list_book():
     print(Library.list_books())
     return
 def lend_book(books_name):
-    for book in Library._Library__books:
+    for book in Library.list_books():
         if book._Book__title == books_name:
             if Client.lend_book(book):
                 print("Livro Emprestado Com Sucesso!")

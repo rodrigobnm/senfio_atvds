@@ -1,34 +1,53 @@
+from Book import Book
 from Client import Client
 from Library import Library
 
-# from funcoes import list_book, lend_book, return_book
-
-clients = {}
-
+library = Library()
+client_name = input("Informe o nome do cliente: ")
+client = Client(client_name)
+library.add_client(client)
+    
 while True:
-    name = input("Por favor, insira seu nome: ")
-    if name not in clients:
-        clients[name] = Client(name)
-    client = clients[name]
-    menu_options = input("1. Listar Livros Disponiveis\n2. Emprestar Um Livro (Especificado Pelo Nome).\n3. Devolver Um Livro (Especificado Pelo Nome).\n4. Sair\n")
-    
-    if menu_options == "1":
-        print(Library.list_books())
-
-    elif menu_options == "2":
-        books_name = input("Digite o Titulo do Livro Que Ira Emprestar: ")
-        books_author = input("Autor: ")
-        cliente = Client(books_name)
-        Client.lend_book(books_name, books_name, books_author)
+    print("1. Listar Livros Disponiveis\n2. Emprestar Um Livro\n3. Devolver Um Livro\n4. Sair\n")
+    choice = int(input("Escolha Uma Opcao: "))
         
-    elif menu_options == "3":
-        books_name = input("Digite o Titulo do Livro Que Ira Devolver: ")
-        for book in Client.__borrowed_books:
-            if book._Book__title == books_name:
-                if Client.return_book(book):
-                    print("Livro devolvido com sucesso!")
-                else:
-                    print("Você não emprestou este livro!")
+    if choice == 1:
+        print(library.list_books())
+        
+    elif choice == 2:
+        book_title = input("Informe o Titulo Do Livro: ")
+        book = None
+        for b in library._Library__books:
+            if b._Book__title == book_title:
+                book = b
+            break
+        if book:
+            if client.lend_book(book):
+                print(f"Livro '{book_title}' Emprestado Com Sucesso!")
+            else:
+                print(f"Livro '{book_title}' Nao Esta disponivel.")
+        else:
+            print(f"Livro '{book_title}' Nao Encontrado.")
+        
+    elif choice == 3:
+        book_title = input("Informe o Titulo Do Livro: ")
+        book = None
+        for b in client._Client__borrowed_books:
+            if b._Book__title == book_title:
+                book = b
+            break
 
+        if book:
+            if client.return_book(book):
+                print(f"Livro '{book_title}'Devolvido Com Sucesso!")
+            else:
+                print(f"Erro Ao Devolver o Livro '{book_title}'.")
+        else:
+            print(f"Livro '{book_title}' Nao Encontrado Entre Os Livros Emprestados.")
+        
+    elif choice == 4:
+        break
+        
+    else:
+        print("Opcao Invalida! Tente Novamente.")
 
-    
